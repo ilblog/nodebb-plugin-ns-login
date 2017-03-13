@@ -40,6 +40,7 @@
                 router.post(
                     apiUri,
                     userDefence.getMiddleware({
+                        ignoreIP: true, // Set true if API is used interlanny from other components
                         key: function (req, res, next) {
                             // prevent too many attempts for the same username
                             next(req.body.username);
